@@ -393,8 +393,8 @@
       "targetUser": "1-20 person B2B SaaS with self-hosted HTML docs (Docusaurus/MkDocs/custom) and email support, not using a help desk's bundled AI",
       "job": "让访客和新用户在帮助中心直接得到带来源链接的答案，减少重复的安装、计费和配置类工单",
       "offer": "作为 Docapta 的第二个客户细分：/for/saas-help-center 落地页，导入公开文档，只基于本站资料回答并附来源，答不出转人工，按月固定收费、无按次和超额收费",
-      "pricing": "$39 monthly (Docapta Pro) + ~300-page tier to test",
-      "targetMath": "26 x $39 = $1,014 MRR",
+      "pricing": "$39 Pro / $79 Docs 300 tier (proposed)",
+      "targetMath": "13 x $79 = $1,027 MRR",
       "channels": [
         "Docusaurus showcase and docs-site founder outreach",
         "Indie Hackers / HN Show HN docs-site products",
