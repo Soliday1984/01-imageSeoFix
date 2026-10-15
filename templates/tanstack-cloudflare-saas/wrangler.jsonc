@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tanstack-cloudflare-saas",
+  "compatibility_date": "2026-07-06",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": "@tanstack/react-start/server-entry",
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "PUBLIC_APP_NAME": "Edge SaaS Starter",
+    "PUBLIC_SITE_URL": "http://localhost:3000"
+  }
+
+  // Uncomment and replace ids after creating real Cloudflare resources.
+  // "d1_databases": [
+  //   {
+  //     "binding": "DB",
+  //     "database_name": "edge-saas-starter",
+  //     "database_id": "replace-with-d1-database-id"
+  //   }
+  // ],
+  // "r2_buckets": [
+  //   {
+  //     "binding": "FILES",
+  //     "bucket_name": "edge-saas-starter-files"
+  //   }
+  // ],
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "CACHE",
+  //     "id": "replace-with-kv-namespace-id"
+  //   }
+  // ],
+  // "ai": {
+  //   "binding": "AI"
+  // }
+}
