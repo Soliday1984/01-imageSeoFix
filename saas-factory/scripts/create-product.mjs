@@ -7,12 +7,8 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const factoryRoot = path.resolve(__dirname, '..');
-const defaultTemplatePath = path.resolve(
-  factoryRoot,
-  '..',
-  'templates',
-  'tanstack-cloudflare-saas',
-);
+// Edge SaaS Starter, repo Soliday1984/08-template.
+const defaultTemplatePath = 'E:\\GitRepo\\08-template\\08-template';
 const tanStarterTemplatePath = 'E:\\mkfast-template\\mkfast-template';
 const defaultOutRoot = 'E:\\AIphaDev\\products';
 

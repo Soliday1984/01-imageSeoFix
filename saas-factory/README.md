@@ -10,7 +10,7 @@ starts small; add D1, Better Auth, Stripe, R2, AI and other modules only when a
 product needs them.
 
 ```text
-E:\AIphaDev\templates\tanstack-cloudflare-saas
+E:\GitRepo\08-template\08-template   (repo Soliday1984/08-template)
 ```
 
 Full-module reference (TanStarter/MkFast), still usable with `--template`:
