@@ -1,0 +1,91 @@
+{
+  "slug": "shopify-alt-text-generator",
+  "name": "Shopify Alt Text Generator",
+  "brand": "AltTextFix",
+  "description": "Generate and audit Shopify product image alt text from CSV exports, then download clean SEO-ready suggestions.",
+  "domain": "alttextfix.com",
+  "baseUrl": "https://alttextfix.com",
+  "market": "US",
+  "primaryKeyword": "shopify alt text generator",
+  "keywords": [
+    {
+      "keyword": "shopify alt text generator",
+      "intent": "Generate product image alt text for Shopify stores",
+      "page": "/",
+      "type": "tool",
+      "monetization": "Batch export and CSV cleanup"
+    },
+    {
+      "keyword": "bulk alt text generator for shopify",
+      "intent": "Bulk generate alt text from Shopify CSV",
+      "page": "/bulk-alt-text-generator",
+      "type": "tool",
+      "monetization": "Paid CSV export"
+    },
+    {
+      "keyword": "shopify image seo checker",
+      "intent": "Check missing and weak image alt text",
+      "page": "/shopify-image-seo-checker",
+      "type": "checker",
+      "monetization": "Audit report and cleanup"
+    }
+  ],
+  "mvp": {
+    "freeTool": "Paste or upload a Shopify CSV and audit missing, short, long, or generic image alt text.",
+    "paidValue": "Batch cleanup, export, history, private processing, and larger CSV limits."
+  },
+  "features": [
+    "Shopify CSV audit",
+    "Product-aware alt text suggestions",
+    "Bulk export",
+    "SEO issue summary",
+    "Paid cleanup workflow"
+  ],
+  "providers": {
+    "auth": true,
+    "googleOAuth": false,
+    "payment": "",
+    "mail": "resend",
+    "newsletter": "resend",
+    "notification": "",
+    "storage": true,
+    "cache": true
+  },
+  "cloudflare": {
+    "workerName": "alttextfix",
+    "route": "alttextfix.com",
+    "d1DatabaseName": "alttextfix",
+    "d1DatabaseId": "",
+    "r2BucketName": "alttextfix",
+    "kvNamespaceId": ""
+  },
+  "social": {
+    "github": "",
+    "discord": "",
+    "twitter": "",
+    "youtube": ""
+  },
+  "contact": {
+    "fromEmail": "AltTextFix <support@alttextfix.com>",
+    "supportEmail": "support@alttextfix.com"
+  },
+  "messages": {
+    "en": {
+      "siteTitle": "AltTextFix - Shopify Alt Text Generator",
+      "siteDescription": "Generate, audit, and export Shopify product image alt text from CSV files.",
+      "heroIntro": "Introducing AltTextFix",
+      "heroTitle": "Generate Shopify image alt text from your product CSV",
+      "heroDescription": "Audit missing alt text, create product-aware suggestions, and export clean SEO-ready CSV updates.",
+      "ctaDescription": "Start with a free Shopify image SEO audit, then upgrade for batch export."
+    },
+    "zh": {
+      "siteTitle": "AltTextFix - Shopify 图片 Alt Text 生成器",
+      "siteDescription": "从 Shopify CSV 生成、检查并导出商品图片 alt text。",
+      "heroIntro": "认识 AltTextFix",
+      "heroTitle": "从 Shopify 商品 CSV 批量生成图片 Alt Text",
+      "heroDescription": "检查缺失 alt text，生成商品相关建议，并导出适合 SEO 的 CSV 更新文件。",
+      "ctaDescription": "先免费检查 Shopify 图片 SEO，再按需升级批量导出。"
+    }
+  }
+}
+

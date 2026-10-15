@@ -1,0 +1,11 @@
+{
+  "name": "saas-factory",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "create-product": "node scripts/create-product.mjs",
+    "create-example": "node scripts/create-product.mjs --config products/shopify-alt-text-generator/product.json --out products-output --force",
+    "pool:rank": "node scripts/rank-opportunities.mjs",
+    "pool:check": "node scripts/rank-opportunities.mjs --check"
+  }
+}
