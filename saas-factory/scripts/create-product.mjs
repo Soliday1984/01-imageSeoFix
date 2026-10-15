@@ -7,9 +7,10 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const factoryRoot = path.resolve(__dirname, '..');
-// Edge SaaS Starter, repo Soliday1984/08-template.
+// TanStarter (full SaaS master), repo Soliday1984/08-template.
 const defaultTemplatePath = 'E:\\GitRepo\\08-template\\08-template';
-const tanStarterTemplatePath = 'E:\\mkfast-template\\mkfast-template';
+// Minimal alternative for small tool / game sites.
+const edgeTemplatePath = 'E:\\AIphaDev\\templates\\tanstack-cloudflare-saas';
 const defaultOutRoot = 'E:\\AIphaDev\\products';
 
 const excludedSegments = new Set([
@@ -87,9 +88,9 @@ Usage:
 
 Options:
   --config <path>    Product config JSON.
-  --template <path>  Template path. Default: Edge SaaS Starter
+  --template <path>  Template path. Default: TanStarter
                      (${defaultTemplatePath}).
-                     Full TanStarter: ${tanStarterTemplatePath}
+                     Minimal Edge SaaS Starter: ${edgeTemplatePath}
   --out <path>       Output root directory.
   --force            Replace existing output directory.
 `);
@@ -379,11 +380,12 @@ try {
     process.exit(1);
   }
 
-  const command = process.platform === 'win32' ? 'wrangler.cmd' : 'wrangler';
+  // Node refuses to spawn .cmd files without a shell (CVE-2024-27980),
+  // so go through the shell on Windows.
   const result = spawnSync(
-    command,
+    'wrangler',
     ['d1', 'migrations', 'apply', dbName, mode],
-    { stdio: 'inherit' },
+    { stdio: 'inherit', shell: process.platform === 'win32' }
   );
 
   if (result.error) {
@@ -633,8 +635,11 @@ function launchChecklist(product) {
 - [ ] pnpm install
 - [ ] pnpm cf-typegen
 - [ ] pnpm db:migrate:local
-- [ ] pnpm check
+- [ ] pnpm lint
+- [ ] pnpm test
 - [ ] pnpm build
+- [ ] pnpm typecheck
+- [ ] pnpm e2e (optional, needs Playwright)
 - [ ] pnpm dev
 
 ## Launch
@@ -654,7 +659,7 @@ function edgeLaunchChecklist(product) {
 
 Template: Edge SaaS Starter (TanStack Start + Cloudflare Workers). Add D1,
 Better Auth, Stripe, R2, AI and other modules only when the product needs them;
-see ${tanStarterTemplatePath} for full reference implementations.
+see ${defaultTemplatePath} (TanStarter) for full reference implementations.
 
 ## Keyword Validation
 
@@ -794,8 +799,10 @@ async function main() {
   } else {
     console.log('  pnpm cf-typegen');
     console.log('  pnpm db:migrate:local');
-    console.log('  pnpm check');
+    console.log('  pnpm lint');
+    console.log('  pnpm test');
     console.log('  pnpm build');
+    console.log('  pnpm typecheck');
   }
 }
 

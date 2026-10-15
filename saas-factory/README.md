@@ -5,18 +5,21 @@ products from a clean template.
 
 ## Source Template
 
-Default master: Edge SaaS Starter (TanStack Start + Cloudflare Workers). It
-starts small; add D1, Better Auth, Stripe, R2, AI and other modules only when a
-product needs them.
+Default master: TanStarter (TanStack Start + Cloudflare Workers, with auth,
+D1, Stripe/Creem/Waffo, R2, KV, AI, i18n, blog, newsletter and admin built in).
 
 ```text
-E:\GitRepo\08-template\08-template   (repo Soliday1984/08-template)
+E:\GitRepo\08-template\08-template   (private repo Soliday1984/08-template)
 ```
 
-Full-module reference (TanStarter/MkFast), still usable with `--template`:
+It tracks the official template as remote `upstream`
+(saas-sources-org/mkfast-template, read-only): `git fetch upstream` then merge
+into `main` to pick up new features. Keep the repo private (TanStarter license).
+
+Minimal alternative for small tool / game sites, usable with `--template`:
 
 ```text
-E:\mkfast-template\mkfast-template
+E:\AIphaDev\templates\tanstack-cloudflare-saas   (Edge SaaS Starter)
 ```
 
 Do not edit either folder for product experiments. Use this factory to copy a
@@ -46,15 +49,15 @@ E:\AIphaDev\products\<product-slug>\
 It copies the template while excluding `.git`, `node_modules`, build output,
 local env files, Playwright reports, and Cloudflare local state.
 
-To use TanStarter instead:
+To use the minimal Edge SaaS Starter instead:
 
 ```powershell
-pnpm create-product -- --config products/shopify-alt-text-generator/product.json --template E:\mkfast-template\mkfast-template
+pnpm create-product -- --config products/shopify-alt-text-generator/product.json --template E:\AIphaDev\templates\tanstack-cloudflare-saas
 ```
 
 ## What Gets Customized
 
-Edge SaaS Starter (default):
+Edge SaaS Starter (`--template`):
 
 - `package.json` package name.
 - `wrangler.jsonc` worker name and vars `PUBLIC_APP_NAME` / `PUBLIC_SITE_URL`.
@@ -64,7 +67,7 @@ Edge SaaS Starter (default):
 
 Validate the output with `pnpm install` and `pnpm validate`.
 
-TanStarter (`--template`):
+TanStarter (default):
 
 - `package.json` package name.
 - `wrangler.jsonc` worker name, domain route, D1/R2/KV placeholders.
