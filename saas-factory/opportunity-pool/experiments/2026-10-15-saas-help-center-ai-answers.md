@@ -24,7 +24,7 @@
 | 门 | 结果 | 依据 |
 |---|---|---|
 | 需求门 | 部分通过 | 2 条独立用户/创始人原话（HN 44324884：B2B 团队大量重复问题本可读文档解决；Castro 创始人支持邮件压垮自己，HN 348 分）。第 3 条来自厂商发布帖，不算独立。Fin 的抱怨都是转引，没有拿到原帖（本环境打不开 Reddit） |
-| 触达门 | 可通过（名单未筛） | Docusaurus 官方 showcase 有 32 个商业产品文档站（排除开源标签），可作首批 30 家名单来源；再排除已用 Intercom/Help Scout/Zendesk/Mintlify Pro/GitBook Ultimate 自带 AI 的 |
+| 触达门 | 名单不足（2026-10-15 筛选后更新） | Docusaurus 官方 showcase 有 32 个商业产品文档站，筛完只剩 6–8 家可用，见「名单筛选现状」；需要补充来源 |
 | 付款门 | 未通过 | 没有价格测试；50 页上限不匹配 116–411 页的帮助中心 |
 | 交付门 | 有条件通过 | Docapta 已上线，成本上限、Turnstile、来源校验都在；只要把页数额度提到 300 页左右，3 天内能出细分落地页。需在 2026-11-01 AI Search 开始计费前复核入库成本 |
 
@@ -40,11 +40,36 @@
 
 - 提供的最小结果: 在 Docapta 加 `/for/saas-help-center` 落地页；给 10 家筛过的目标各做一个演示机器人，附 10 个真实问题、答案和来源核对
 - 样本来源: Docusaurus showcase 名单筛选后的 10 家
-- 定价与 CTA: 先测 $39（现有 Pro）和一个 300 页档位，价格页上明确「无按次收费、无超额收费」
+- 定价与 CTA: Sunny 2026-10-15 决定先不定价，外联时同时测 $59 和 $79 两个价位，见下方「双价位测试」。两档额度相同（300 页、1,000 次问答/31 天、无按次和超额收费）
 - 时间上限: 14 天
 - 成本上限: 每个演示机器人沿用 Docapta 现有每日 25 次、每访客 6 次限额
 - 流量和 AI 调用限额: 同上；不开放免费无限试用
 - 对外发送需 Sunny 明确授权
+
+### 双价位测试（2026-10-15 定）
+
+- 两组：A 组报 $59/月，B 组报 $79/月。额度、话术、演示内容完全一样，只有价格不同
+- 每家只看到一个价格，不在同一封信里给两个选项
+- 分组：名单按文档页数排序后交替分到 A、B，避免一组全是大帮助中心
+- 样本：每组 10 家，共 20 家。每组 10 家只能看方向，不能当作统计显著的结论
+- CTA：Docapta 现在没有这两个 Stripe 价格。第一步只收「上线后按这个价付费」的明确答复或预约；有人答应后，经 Sunny 同意再为对应价位建 Stripe 价格收第一笔款
+- 每组记录：回复数、接受演示数、嵌入试用数、提到价格异议的次数（附原话）、明确付费意向数、实际付款数
+- 判定：
+  - B 组付费意向数不少于 A 组 → 定 $79
+  - A 组付费意向数至少是 B 组的 2 倍，且 B 组的异议主要在价格 → 定 $59
+  - 两组都没有付费意向 → 问题不在价格，回到需求门和目标客户
+- 成本依据见 [300 页档位评估](2026-10-15-docapta-300-page-tier-cost.md)：$59 保守毛利约 72%、平均约 84%；$79 保守约 78%、平均约 87%
+
+### 名单筛选现状（2026-10-15）
+
+Docusaurus showcase 的 32 个商业产品文档站自动筛了一遍（首页 HTTP 状态、sitemap 页数、页面源码里有没有 AI/客服挂件）：
+
+- 7 个打不开：AvN Gateway、Brainboard、Indent 返回 404，SQL Frames、Warrant、CodingHabits 连接失败，Unmand 返回 403；Wings 已停运
+- 已有 AI：Paubox 文档已迁到 Mintlify（AI 按钮关闭），StackQL 有「Ask AI about this page」
+- 大公司或不是 SaaS：Dojo、Rokt、Piano Analytics、Mia-Platform、hCaptcha、LifeOmic；Harmonoid、Files Gallery、Virtual Photography Kit、SmartCookieWeb、Sensory Percussion 是消费软件或硬件
+- 看起来可用：codehooks.io、Easypanel、Prismatic（647 页，偏大）、ChatKitty、YepCode、SweetCode、Vantevo Analytics（28 页，现有 $39 档就够）、RaspiSuite。ShopWP 是 WordPress 插件，更适合 Docapta 原来的 WordPress 细分
+
+**只剩 6–8 家，凑不满 2 × 10。** 触达门从「可通过」改为「名单不足」。补充来源：GitHub 代码搜索 `"https://docs." "onBrokenLinks" filename:docusaurus.config.ts` 有约 1,868 个结果，第一批 300 个里有 202 个组织，但大多是开源、加密货币和学术项目，需要人工或半自动再筛；也可以加 MkDocs、Hugo 文档站和 Indie Hackers 上带文档的产品。
 
 ## 原始结果
 
@@ -63,7 +88,7 @@
 - 结论: `repeat`。不另做产品，下一轮作为 Docapta 细分做外联验证
 - 证据是否达到 passGate: 否
 - 最大失败原因: 50 页额度与目标客户文档规模不匹配；付款意愿未测
-- 下一次只改什么: 先决定 Docapta 是否加一个 ≥300 页的档位，再用同一份演示流程外联 10 家。档位成本与定价见 [300 页档位评估](2026-10-15-docapta-300-page-tier-cost.md)：建议 $79/月、300 页、1,000 次问答
+- 下一次只改什么: 先决定 Docapta 是否加一个 ≥300 页的档位，再用同一份演示流程外联 10 家。档位成本与定价见 [300 页档位评估](2026-10-15-docapta-300-page-tier-cost.md)：建议 $79/月、300 页、1,000 次问答。Sunny 决定先不定价，外联改为每组 10 家、共 20 家，分别测 $59 和 $79；先补齐名单
 - `opportunities.json` 需要更新的阶段/评分/证据: 阶段保持 `research`；SEO 3→2（长尾几乎无量）；mvpDays 5→3（复用已上线的 Docapta）；补充竞品价格、样本规模、HN 证据和本记录链接
 
 ## 来源（2026-10-15 读取）

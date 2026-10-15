@@ -12,7 +12,7 @@ Score combines pain, reach, build speed, willingness to pay, recurring value, SE
 | 5 | 71.6 | research | SEO-Critical Website Change Monitor | SEO freelancers and small agencies | $29/$79 monthly | 7d | SEO agency outreach |
 | 6 | 70.4 | research | E-commerce Size Chart Builder and Validator | Small apparel merchants | $19/$39 monthly | 8d | Shopify merchant outreach |
 | 7 | 69.6 | validate-next | Google Takeout Photo Metadata Fixer | Users moving Google Photos archives | $19-$39 one-time | 7d | Google Takeout metadata keywords |
-| 8 | 68 | research | SaaS Help Center AI Answer Widget | 1-20 person B2B SaaS with self-hosted HTML docs (Docusaurus/MkDocs/custom) and email support, not using a help desk's bundled AI | $39 Pro / $79 Docs 300 tier (proposed) | 3d | Docusaurus showcase and docs-site founder outreach |
+| 8 | 68 | research | SaaS Help Center AI Answer Widget | 1-20 person B2B SaaS with self-hosted HTML docs (Docusaurus/MkDocs/custom) and email support, not using a help desk's bundled AI | $39 Pro; Docs 300 tier price test $59 vs $79 | 3d | Docusaurus showcase and docs-site founder outreach |
 | 9 | 66.8 | research | IELTS Writing Error Pattern Coach | IELTS candidates with repeated writing mistakes | $15/$29 monthly | 8d | IELTS writing keywords |
 | 10 | 65.2 | research | Email Attachment Auto Router | Small offices receiving repetitive PDF attachments | $19/$49 monthly | 9d | small business outreach |
 | 11 | 64.8 | research | App Store Screenshot Localizer | Indie mobile app developers | $29 one-time / $19 monthly | 8d | App Store screenshot keywords |

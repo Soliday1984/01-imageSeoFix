@@ -393,8 +393,8 @@
       "targetUser": "1-20 person B2B SaaS with self-hosted HTML docs (Docusaurus/MkDocs/custom) and email support, not using a help desk's bundled AI",
       "job": "让访客和新用户在帮助中心直接得到带来源链接的答案，减少重复的安装、计费和配置类工单",
       "offer": "作为 Docapta 的第二个客户细分：/for/saas-help-center 落地页，导入公开文档，只基于本站资料回答并附来源，答不出转人工，按月固定收费、无按次和超额收费",
-      "pricing": "$39 Pro / $79 Docs 300 tier (proposed)",
-      "targetMath": "13 x $79 = $1,027 MRR",
+      "pricing": "$39 Pro; Docs 300 tier price test $59 vs $79",
+      "targetMath": "13 x $79 = $1,027 or 17 x $59 = $1,003 MRR",
       "channels": [
         "Docusaurus showcase and docs-site founder outreach",
         "Indie Hackers / HN Show HN docs-site products",
@@ -458,8 +458,8 @@
           "date": "2026-10-15"
         }
       ],
-      "experiment": "先决定 Docapta 是否加 ≥300 页档位；再从 Docusaurus showcase 筛 10 家无自带 AI 的小型 SaaS，各做一个演示机器人（10 个真实问题+来源核对），获授权后外联并测试 $39 与 300 页档位",
-      "passGate": "10 家中 3 家同意嵌入试用，1 家外部付款，演示问答来源准确率不低于 90%",
+      "experiment": "补齐 20 家无自带 AI 的小型 SaaS 名单（Docusaurus showcase 只筛出 6-8 家），按文档页数交替分两组，各 10 家分别报 $59 和 $79（额度相同：300 页、1,000 次问答），每家做一个演示机器人（10 个真实问题+来源核对），获授权后外联",
+      "passGate": "20 家中 6 家同意嵌入试用，至少 1 家外部付款，演示问答来源准确率不低于 90%；按两组付费意向决定 $59 或 $79",
       "killGate": "10 家中多数已用帮助台自带 AI 或 DocsBot/Chatbase，或 300 页档位下单客户成本超过 $39 的 20%",
       "scores": {
         "pain": 4,
