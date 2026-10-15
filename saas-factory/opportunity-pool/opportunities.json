@@ -390,17 +390,17 @@
       "name": "SaaS Help Center AI Answer Widget",
       "family": "docs-ai-answers",
       "stage": "research",
-      "targetUser": "Small B2B SaaS teams (1-20 people) with a public help center or docs site",
+      "targetUser": "1-20 person B2B SaaS with self-hosted HTML docs (Docusaurus/MkDocs/custom) and email support, not using a help desk's bundled AI",
       "job": "让访客和新用户在帮助中心直接得到带来源链接的答案，减少重复的安装、计费和配置类工单",
-      "offer": "导入公开帮助中心/文档，嵌入式 AI 问答挂件，只基于本站资料回答并附来源；答不出时转人工；每月未答问题报告",
-      "pricing": "$29/$49 monthly",
-      "targetMath": "21 x $49 = $1,029 MRR",
+      "offer": "作为 Docapta 的第二个客户细分：/for/saas-help-center 落地页，导入公开文档，只基于本站资料回答并附来源，答不出转人工，按月固定收费、无按次和超额收费",
+      "pricing": "$39 monthly (Docapta Pro) + ~300-page tier to test",
+      "targetMath": "26 x $39 = $1,014 MRR",
       "channels": [
-        "knowledge base chatbot keywords",
-        "SaaS founder outreach",
-        "help center platform communities"
+        "Docusaurus showcase and docs-site founder outreach",
+        "Indie Hackers / HN Show HN docs-site products",
+        "intercom fin pricing and help scout ai keywords"
       ],
-      "mvpDays": 5,
+      "mvpDays": 3,
       "evidence": [
         {
           "url": "https://app.openseo.so/p/97d124af-dac1-46bd-b242-df46301de83a/keywords",
@@ -416,18 +416,58 @@
           "url": "https://www.eesel.ai/blog/ai-knowledge-base-chatbot",
           "observed": "eesel (#5), joyz.ai, denser.ai and quickchat.ai rank with comparison/guide pages; the SERP mixes customer-facing and internal-wiki intent",
           "date": "2026-10-15"
+        },
+        {
+          "url": "https://www.intercom.com/pricing",
+          "observed": "Fin AI Agent is $0.99 per outcome on every plan; Help Scout AI Answers is $0.75 per resolution (helpscout.com/pricing), so incumbent help-desk AI is metered per answer",
+          "date": "2026-10-15"
+        },
+        {
+          "url": "https://docsbot.ai/pricing",
+          "observed": "DocsBot Personal $49/mo includes 5k source pages and 5k AI credits; Chatbase Hobby $32/mo (yearly) has 700 credits; Docapta's $39 with 50 pages/500 questions is weaker on limits",
+          "date": "2026-10-15"
+        },
+        {
+          "url": "https://docs.buttondown.com/sitemap.xml",
+          "observed": "Sampled small-SaaS docs sitemaps: Buttondown 281, Tally 197, Simple Analytics 116, Kit 411 help pages; all exceed Docapta's 50-page cap",
+          "date": "2026-10-15"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=44324884",
+          "observed": "B2B SaaS commenter: a fair share of repeat questions could have been solved by reading the docs; support is email via HubSpot",
+          "date": "2026-10-15"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=48799929",
+          "observed": "Castro founder essay (348 points): support email volume overwhelmed the founder, who paid a power user to answer",
+          "date": "2026-10-15"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=43683012",
+          "observed": "Cursor's AI support bot invented a policy and caused cancellations (1,511 points); grounded answers with sources and human handoff are required",
+          "date": "2026-10-15"
+        },
+        {
+          "url": "https://github.com/facebook/docusaurus/blob/main/website/src/data/users.tsx",
+          "observed": "Docusaurus showcase lists 32 commercial product docs sites (product tag, not opensource) as a first outreach list to screen",
+          "date": "2026-10-15"
+        },
+        {
+          "url": "https://app.openseo.so/p/97d124af-dac1-46bd-b242-df46301de83a/keywords",
+          "observed": "Second openSEO batch: only 4 of 16 long-tail terms have data (help scout ai 50, intercom fin pricing 50, ai help center 30, ai documentation assistant 10); SEO is not the primary channel. Experiment record: saas-factory/opportunity-pool/experiments/2026-10-15-saas-help-center-ai-answers.md",
+          "date": "2026-10-15"
         }
       ],
-      "experiment": "用 Docapta 母版为 10 家公开帮助中心的小型 SaaS 各建一个演示机器人，发送带 20 个真实问答样例的私信和 $49 方案",
-      "passGate": "3 家愿意嵌入试用，1 家付费，演示问答来源准确率不低于 90%",
-      "killGate": "目标客户已在用 Zendesk/Intercom 自带 AI，或 20 次触达无人愿意试用",
+      "experiment": "先决定 Docapta 是否加 ≥300 页档位；再从 Docusaurus showcase 筛 10 家无自带 AI 的小型 SaaS，各做一个演示机器人（10 个真实问题+来源核对），获授权后外联并测试 $39 与 300 页档位",
+      "passGate": "10 家中 3 家同意嵌入试用，1 家外部付款，演示问答来源准确率不低于 90%",
+      "killGate": "10 家中多数已用帮助台自带 AI 或 DocsBot/Chatbase，或 300 页档位下单客户成本超过 $39 的 20%",
       "scores": {
         "pain": 4,
         "reach": 3,
         "speed": 5,
         "willingnessToPay": 4,
         "recurring": 5,
-        "seo": 3,
+        "seo": 2,
         "margin": 4,
         "defensibility": 2,
         "risk": 3
