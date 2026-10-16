@@ -37,7 +37,7 @@
 - [x] 首页与 `/shopify-alt-text-generator` 工具页
 - [x] 浏览器内 CSV 审计、建议生成、CSV 导出
 - [x] 品牌、导航、价格文案初步替换
-- [x] GitHub 推送到 `Soliday1984/01-ai-alt`
+- [x] GitHub 推送到 `Soliday1984/01-imageSeoFix`（2026-10-16 由 01-ai-alt 改名）
 - [x] 代码层禁用未上线高成本 API 路径
 - [x] 公开页面 middleware 不再每次查 auth session
 - [x] 瘦身模板并升级到 Next.js `16.2.6`：提交 `55791de`
