@@ -9,12 +9,15 @@ Default master: TanStarter (TanStack Start + Cloudflare Workers, with auth,
 D1, Stripe/Creem/Waffo, R2, KV, AI, i18n, blog, newsletter and admin built in).
 
 ```text
-E:\GitRepo\08-template\08-template   (private repo Soliday1984/08-template)
+E:\tanstarter-mkfast-template\mkfast-template   (private fork Soliday1984/origin-tanstarter-mkfast-template)
 ```
 
-It tracks the official template as remote `upstream`
-(saas-sources-org/mkfast-template, read-only): `git fetch upstream` then merge
-into `main` to pick up new features. Keep the repo private (TanStarter license).
+It is a fork of the official template (saas-sources-org/mkfast-template,
+remote `upstream`, read-only), which the author keeps updating in step with
+https://docs.tanstarter.dev/. To pick up new features: `git fetch upstream`,
+`git merge upstream/main`, push to `origin` (or use "Sync fork" on GitHub, then
+`git pull`). Keep it private (TanStarter license). Soliday1984/08-template is
+only a backup copy.
 
 Minimal alternative for small tool / game sites, usable with `--template`:
 

@@ -7,8 +7,8 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const factoryRoot = path.resolve(__dirname, '..');
-// TanStarter (full SaaS master), repo Soliday1984/08-template.
-const defaultTemplatePath = 'E:\\GitRepo\\08-template\\08-template';
+// TanStarter (full SaaS master): private fork Soliday1984/origin-tanstarter-mkfast-template.
+const defaultTemplatePath = 'E:\\tanstarter-mkfast-template\\mkfast-template';
 // Minimal alternative for small tool / game sites.
 const edgeTemplatePath = 'E:\\AIphaDev\\templates\\tanstack-cloudflare-saas';
 const defaultOutRoot = 'E:\\AIphaDev\\products';
