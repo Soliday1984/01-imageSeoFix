@@ -82,8 +82,8 @@
   - 证据：2026-07-31 生产抽检 `https://imageseofix.com/`、`/self-serve`、`/shopify-image-seo-checker`、`/sitemap.xml` 均返回 200；首页和 `/self-serve` 使用 `/self-serve-icon.svg`；核心页面保留独立 H1、FAQ、WebApplication 结构化数据和上下文内链。
 - [ ] `SEO-B03` 使用 GSC URL Inspection 检查三个核心 URL 的 live page。
   - 完成定义：记录 live test 结果；没有 robots、canonical、渲染或服务器错误。
-- [ ] `SEO-B04` 对三个核心 URL 执行 Request indexing。
-  - 完成定义：记录提交日期和 GSC 返回状态。
+- [x] `SEO-B04` 对三个核心 URL 执行 Request indexing。
+  - 2026-07-31 已在 GSC 成功提交：`/shopify-alt-text-generator`、`/bulk-alt-text-generator`、`/shopify-image-seo-checker`；返回“已请求编入索引”，Google 已将网址添加到优先抓取队列。
 - [ ] `SEO-B05` 7 天后复查收录。
   - 完成定义：逐 URL 记录 Indexed/Not indexed 及原因；未收录则创建具体修复任务。
 - [ ] `SEO-B06` 14 天后复查查询词和页面曝光。

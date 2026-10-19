@@ -1,6 +1,6 @@
 # ImageSEOFix Fully Automated SaaS Checklist
 
-Updated: 2026-07-10
+Updated: 2026-07-11
 
 Goal: move from a paid manual CSV cleanup service to a self-serve SaaS loop:
 merchant uploads official Shopify Products CSV, pays once, receives an unlocked
@@ -11,6 +11,31 @@ cleaned CSV download, and can complete the whole path without waiting for us.
 ImageSEOFix has passed the complete test-mode self-serve delivery loop. The live
 webhook and live `$19` Price are configured, but public self-serve remains
 disabled until the permanent restricted live key and one real-payment E2E pass.
+
+## Investment Decision Record (2026-07-11)
+
+Decision: keep ImageSEOFix live at low cost and do not add product scope or
+commit further build budget yet. The current product is sufficient to test the
+core value proposition: a Shopify merchant can obtain a Shopify-ready CSV for
+bulk image alt-text cleanup without installing an app or granting store-admin
+access.
+
+Why: the delivery path is technically credible, but market proof is not yet
+credible. Search Console currently shows 1 click and 11 impressions, and the
+paid D1 jobs are test-mode runs. A live checkout job still needs completion and
+Shopify import-preview confirmation.
+
+Re-evaluate investment only after these validation signals are collected:
+
+- 10 real Shopify merchants complete a free audit or CSV trial.
+- At least 3 external merchants explicitly accept or request the `$19` offer.
+- At least 1 to 3 external paid jobs complete the full delivery and import path.
+- Funnel data exists for audit, checkout start, payment, download, and import
+  success; refunds and support issues are reviewed.
+
+Decision rule: if 50 qualified merchant outreaches do not produce 3 credible
+purchase signals or an external paid order, pause feature investment and revise
+the positioning, price, or target problem before building more.
 
 ## P0 Revenue Loop
 
