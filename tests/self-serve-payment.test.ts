@@ -45,9 +45,11 @@ function createJob(tokenHash: string): SelfServeJobRow {
 function createDb(job: SelfServeJobRow) {
   const recoveryTokens: Array<{ jobId: string; tokenHash: string; expiresAt: string }> = [];
   const events: Array<{ jobId: string; name: string; data: string }> = [];
+  const growthEvents = new Map<string, unknown[]>();
   return {
     recoveryTokens,
     events,
+    growthEvents,
     prepare(query: string) {
       let values: unknown[] = [];
       return {
@@ -72,6 +74,10 @@ function createDb(job: SelfServeJobRow) {
           return { results: [job] as T[] };
         },
         async run() {
+          if (query.includes('INSERT OR IGNORE INTO growth_events')) {
+            if (!growthEvents.has(String(values[0]))) growthEvents.set(String(values[0]), values);
+            return {meta: {changes: 1}};
+          }
           if (query.includes("SET payment_status = 'paid'")) {
             if (job.payment_status === 'paid') {
               return { meta: { changes: 0 } };
@@ -182,6 +188,8 @@ test('verified Stripe payment unlocks the job and emails a short-lived recovery 
   assert.ok(job.recovery_token_expires_at);
   assert.deepEqual(db.events.map((event) => event.name), ['payment_verified']);
   assert.equal(calls.length, 2);
+  assert.equal(db.growthEvents.size, 1);
+  assert.equal(db.growthEvents.get('stripe:cs_test_123')?.[4], 1);
 
   const email = JSON.parse(calls[1].body ?? '{}') as {
     sender?: { email?: string; name?: string };

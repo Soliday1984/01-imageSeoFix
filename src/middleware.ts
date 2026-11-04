@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server';
+import { captureAcquisition } from '@/lib/acquisition';
 
 const allowedPrefixes = ['/api/self-serve/'];
 const blockedPrefixes = ['/api/', '/admin/', '/dashboard/', '/settings/', '/auth/'];
@@ -92,7 +93,16 @@ export function middleware(request: NextRequest) {
     return textResponse('Not found', 404);
   }
 
-  return applySecurityHeaders(NextResponse.next());
+  const response = applySecurityHeaders(NextResponse.next());
+  if (request.headers.get('accept')?.includes('text/html') && !/\.[a-z0-9]+$/i.test(pathname)) {
+    const captured = captureAcquisition(request, new Response(null, {headers: {'content-type': 'text/html'}}));
+    const cookie = captured.headers.get('set-cookie');
+    if (cookie) {
+      response.headers.append('set-cookie', cookie);
+      response.headers.set('cache-control', 'private, no-store');
+    }
+  }
+  return response;
 }
 
 export const config = {

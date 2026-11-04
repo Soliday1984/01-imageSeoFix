@@ -13,13 +13,12 @@ export function trackEvent(event: string, payload: AnalyticsPayload = {}) {
   const compactPayload = Object.fromEntries(
     Object.entries(payload).filter(([, value]) => value !== undefined)
   );
-  const body = JSON.stringify({ event, payload: compactPayload });
+  const body = JSON.stringify({ eventId: crypto.randomUUID(), event, payload: compactPayload });
 
   try {
     if (navigator.sendBeacon) {
       const blob = new Blob([body], { type: 'application/json' });
-      navigator.sendBeacon('/events', blob);
-      return;
+      if (navigator.sendBeacon('/events', blob)) return;
     }
 
     void fetch('/events', {

@@ -1,4 +1,5 @@
 import { CsvValidationError, processShopifyCsv } from '@/lib/self-serve/csv';
+import { attachAcquisition, recordGrowthEvent, safelyTrack } from '@/lib/growth-events';
 import {
   assertSelfServeEnabled,
   createAccessToken,
@@ -132,6 +133,11 @@ export async function POST(request: Request) {
       cleanedKey,
       tokenHash,
       stats: result.stats,
+    });
+    await safelyTrack(async () => {
+      await attachAcquisition(db, `job:${jobId}`, request.headers);
+      await recordGrowthEvent(db, {key: `job:${jobId}`, name: 'job_created', subject: `job:${jobId}`,
+        isTest: email.endsWith('.test') || email === env.IMAGESEOFIX_E2E_EMAIL});
     });
     await recordSelfServeEvent(db, jobId, 'job_created', {
       processedImageRows: result.stats.processedImageRows,

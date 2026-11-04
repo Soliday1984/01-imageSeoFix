@@ -8,6 +8,7 @@ import {
   SelfServeError,
   verifyJobToken,
 } from '@/lib/self-serve/server';
+import { recordGrowthEvent, safelyTrack } from '@/lib/growth-events';
 
 export const dynamic = 'force-dynamic';
 
@@ -50,6 +51,9 @@ export async function GET(request: Request, context: RouteContext) {
     }
 
     await markJobDownloaded(db, job.id);
+    await safelyTrack(() => recordGrowthEvent(db, {
+      key: `download:${job.id}`, name: 'csv_downloaded', subject: `job:${job.id}`,
+    }));
     await recordSelfServeEvent(db, job.id, 'csv_downloaded');
 
     return new Response(object.body, {
