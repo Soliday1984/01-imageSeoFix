@@ -65,5 +65,8 @@ jobs:
       - name: Build Next.js
         run: pnpm build
 
+      - name: Verify conversion and payment regressions
+        run: pnpm test:self-serve && pnpm test:growth
+
       - name: Build Cloudflare Worker bundle
         run: pnpm cf:build

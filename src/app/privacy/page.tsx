@@ -50,6 +50,15 @@ export default function PrivacyPage() {
       <section>
         <h2>How we use information</h2>
         <p>
+          A first-party acquisition_v1 cookie, lasting up to 30 days, remembers
+          the first traffic source, campaign slug and landing pathname. It does
+          not store emails, IP addresses, access tokens or page query values.
+          We associate this context with task and payment records. Browser
+          interactions are stored separately from confirmed transactions.
+          Global Privacy Control and Do Not Track prevent this cookie and
+          browser interaction collection. You can also block or delete it.
+        </p>
+        <p>
           We use information to process CSV files, deliver paid downloads,
           prevent abuse, respond to support requests, maintain transaction
           records, improve the service, and comply with legal obligations. We

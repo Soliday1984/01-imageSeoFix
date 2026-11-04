@@ -654,7 +654,7 @@ export function ImageSeoAuditor() {
       return;
     }
 
-    trackEvent('lead_request_submit', {
+    trackEvent('lead_email_open', {
       mode,
       imageRows: rows.length,
       issueCount: rows.filter((row) => row.issues.length > 0).length,

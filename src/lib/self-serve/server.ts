@@ -1,4 +1,5 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare';
+import { recordGrowthEvent } from '../growth-events.ts';
 
 import type { SelfServeCsvStats } from './csv';
 
@@ -1247,10 +1248,6 @@ export async function markPaidFromStripeSession(input: {
   job: SelfServeJobRow;
   sessionId: string;
 }) {
-  if (input.job.payment_status === 'paid') {
-    return true;
-  }
-
   const session = await retrieveCheckoutSession(input.env, input.sessionId);
   if (
     session.id === input.sessionId &&
@@ -1261,6 +1258,14 @@ export async function markPaidFromStripeSession(input: {
     })
   ) {
     const marked = await markJobPaid(input.db, input.job.id, session.id);
+    if ((session.amount_total ?? 0) > 0) {
+      await recordGrowthEvent(input.db, {
+        key: `stripe:${session.id}`, name: 'purchase', subject: `job:${input.job.id}`,
+        isTest: session.livemode !== true || session.metadata?.e2e === 'true',
+        amountMinor: session.amount_total ?? undefined, currency: session.currency ?? undefined,
+        paymentKind: 'one_time',
+      });
+    }
     if (marked) {
       await recordSelfServeEvent(input.db, input.job.id, 'payment_verified', {
         amountTotal: session.amount_total ?? null,
